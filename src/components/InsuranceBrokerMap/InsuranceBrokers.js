@@ -8,8 +8,7 @@ const mapContainerStyle = {
   width: "100%"
 };
 
-// Coordinates for the University of Westminster
-const center = {
+const defaultCenter = {
   lat: 51.5194, // University of Westminster latitude
   lng: -0.1418, // University of Westminster longitude
 };
@@ -26,6 +25,25 @@ const getMarkerIcon = (rating) => ({
   }
 });
 
+const CompassControl = ({ panTo, handleSearch }) => {
+  const handleClick = () => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        panTo({ lat: latitude, lng: longitude });
+        handleSearch(`${latitude},${longitude}`);
+      },
+      () => null
+    );
+  };
+
+  return (
+    <button className="compass-control" onClick={handleClick}>
+       <img src="/locator.png" alt="compass" />
+    </button>
+  );
+};
+
 const InsuranceBrokers = () => {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: 'AIzaSyD3VRRx9jjP6qfGLDK_KYf_EU8OpduSobI',
@@ -37,7 +55,6 @@ const InsuranceBrokers = () => {
   const [selectedResult, setSelectedResult] = useState(null);
   const [mapZoom, setMapZoom] = useState(20);
 
-
   useEffect(() => {
     const savedSearchResults = localStorage.getItem('searchResults');
     if (savedSearchResults) {
@@ -46,10 +63,6 @@ const InsuranceBrokers = () => {
   }, []);
 
   useEffect(() => {
-
-    console.log('2. see stored values:')
-    console.log(searchResults)
-
     localStorage.setItem("searchResults", JSON.stringify(searchResults));
   }, [searchResults]);
 
@@ -63,14 +76,13 @@ const InsuranceBrokers = () => {
   }, [map]);
 
   useEffect(() => {
-  const savedMapZoom = localStorage.getItem('mapZoom');
+    const savedMapZoom = localStorage.getItem('mapZoom');
     if (savedMapZoom) {
       setMapZoom(Number(savedMapZoom));
     }
   }, []);
 
   useEffect(() => {
-   
     localStorage.setItem("mapZoom", mapZoom.toString());
   }, [mapZoom]);
 
@@ -81,7 +93,6 @@ const InsuranceBrokers = () => {
         const location = results[0].geometry.location;
         if (map) {
           map.panTo(location);
-
           const service = new window.google.maps.places.PlacesService(map);
           service.textSearch({
             query: "Insurance Brokers",
@@ -128,7 +139,7 @@ const InsuranceBrokers = () => {
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={mapZoom}
-        center={center}
+        center={defaultCenter}
         onLoad={(map) => setMap(map)}
         onZoomChanged={() => {
           if (map) {
@@ -136,6 +147,8 @@ const InsuranceBrokers = () => {
           }
         }}
       >
+        <CompassControl panTo={(location) => map.panTo(location)} handleSearch={handleSearch} />
+        
         {searchResults.map((result, index) => (
           <Marker
             key={index}
