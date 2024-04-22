@@ -1,0 +1,188 @@
+
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: 60px ;
+}
+
+code {
+  font-family: "Courier New",
+    monospace;
+}
+.cursor-move {
+  cursor: move;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.transition {
+  transition: all 1s ease-in-out;
+}
+.prop-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.prop-fav-card-img {
+  width: 110px;
+  height: 100% !important;
+  object-fit: cover;
+}
+.hover-zoom {
+  transition: all 0.5s ease-in-out;
+}
+.hover-zoom:hover {
+  scale: 1.08;
+}
+.re-fs-10 {
+  font-size: 10px;
+}
+.re-fs-11 {
+  font-size: 11px;
+}
+.re-fs-12 {
+  font-size: 12px;
+}
+
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  margin: 1rem;
+  text-align: center;
+}
+
+.nav {
+  position: fixed;
+  top:0;
+  width: 100%;
+  z-index: 9999;
+
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.site-title {
+  font-size: 2rem;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: .25rem;
+}
+
+.nav li.active {
+  background-color: #555;
+}
+
+.nav li:hover {
+  background-color: #777;
+}
+
+
+
+
+.formInput{
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+}
+
+input{
+  padding: 15px;
+  margin: 10px 0px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+
+label{
+  font-size: 12px;
+  color: gray;
+}
+
+span{
+  font-size: 12px;
+  padding: 3px;
+  color: red;
+  display: none;
+}
+
+input:invalid[focused="true"]{
+  border: 1px solid red;
+}
+
+input:invalid[focused="true"] ~ span{
+  display: block;
+}
+
+.registration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.3)
+    ),
+    url("https://images.pexels.com/photos/114979/pexels-photo-114979.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  background-size: cover;
+  background-position: center;
+}
+
+form{
+    background-color: white;
+    padding: 0px 60px;
+    border-radius: 10px;
+}
+
+h1{
+    color: rgb(77, 1, 77);
+    text-align: center;
+}
+
+button{
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    background-color: rebeccapurple;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
