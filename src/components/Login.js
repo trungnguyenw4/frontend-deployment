@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
-
+import Registration from './Registration';
+//import useAuth from './useAuth';
 
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';

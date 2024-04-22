@@ -77,9 +77,8 @@ function App() {
     
       <div className="container">
         <Routes>
-          <Route path="/" element={<NewsBoard/>} />
+          <Route path="/home" element={<NewsBoard/>} />
           <Route path="/pricing" element={<Pricing />} />
-          <Route path="/home" element={<Home />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/login" element={    <AuthProvider>
                                               <Login />
@@ -107,26 +106,8 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
       </div>
-    <>
-    <>
-    <>
-        </>
-          <p>Something in the middle</p>
-        </>
-        <>
-            <h1>MAPS!</h1>
-            <p>Please see map below</p>
-            <iframe
-              width="600"
-              height="450"
-              style={{ border: 0 }}
-              loading="lazy"
-              allowfullscreen
-              // src="https://www.google.com/maps/embed/v1/place?q=LifeInsurance&key=AIzaSyD3VRRx9jjP6qfGLDK_KYf_EU8OpduSobI"
-            />
-        </>
     </>
-    </>
+    
     
   )
 }

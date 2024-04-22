@@ -6,22 +6,23 @@ export default function Navbar() {
   return (
 
     <nav className="nav">
-      <Link to="/" className="site-title">
+      <Link to="/home" className="site-title">
         Health&Insurance
       </Link>
       {
 sessionStorage.getItem('token')?
 <> 
 <ul>
+        <CustomLink to="/">Home</CustomLink>  
+        <CustomLink to="/home">Home</CustomLink>  
         <CustomLink to="/InsuranceBrokers">InsuranceBrokers</CustomLink>
         <CustomLink to="/Customers">Customers</CustomLink>
-        <CustomLink to="/home">Home</CustomLink>
         <CustomLink to="/logout">Logout</CustomLink>
 </ul>
 </>
 :
 <>
-        <CustomLink to="/home">Home</CustomLink>
+        <CustomLink to="/home">Home</CustomLink>  
         <CustomLink to="/pricing">Pricing</CustomLink>
         <CustomLink to="/about">About</CustomLink>
         <CustomLink to="/login">Login</CustomLink>
