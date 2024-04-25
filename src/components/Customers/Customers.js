@@ -1,4 +1,4 @@
-// src/components/Customers.js
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { API_BASE_URL } from '../../apiConfig';
@@ -6,12 +6,8 @@ import CustomerList from './CustomerList';
 import CustomerDetails from './CustomerDetails';
 import CustomerForm from './CustomerForm';
 
-import  Button  from 'react-bootstrap/Button';
 import  Modal  from 'react-bootstrap/Modal';
-//import useToken from '../../components/useToken'
 
-//import { useAuth } from "../../components/authProvider2";
-//import { useAuth } from "../../components/authProvider2";
 
 
 const tokenString = sessionStorage.getItem('token')
@@ -19,17 +15,30 @@ const userToken = JSON.parse(tokenString)
 
 const headers = { Authorization: `Bearer ${userToken}`};
 
+const modalStyles = {
+  
+  borderRadius: '8px',
+
+  margin: 'auto',
+  textAlign: 'center',
+  position: 'fixed',
+  top: 0,
+  right: 0,
+  bottom: 0,
+  
+  width: '600px', 
+  height: '670px', 
+
+  overflow: 'hidden',
+};
 
 
 function Customers(){
-//const Customers = () => {
+
   const [customers, setCustomers] = useState([]);
   const [selectedCustomer, setSelectedCustomer] = useState(null);
   const [editingCustomer, setEditingCustomer] = useState(null);
   const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false)
- const handleShow = () => setShow(true);
 
 
   useEffect(() => {
@@ -74,11 +83,6 @@ function Customers(){
     }
   };
 
-  const handleViewDetails = (customerId) => {
-    const selected = Customers.find((customer) => customer.customerId === customerId);
-    setSelectedCustomer(selected);
-    setEditingCustomer(null);
-  };
 
   const handleCreate = () => {
     setSelectedCustomer(null);
@@ -123,11 +127,13 @@ function Customers(){
 
 
 return (
-  <div>
+  <div className='container' >
+ <button onClick={handleCreate}>Create New Customer</button>
+
     <CustomerList customers={customers} handleEdit={handleEdit} handleDelete={handleDelete} />
     {selectedCustomer && <CustomerDetails customer={selectedCustomer} />}
 
-    <Modal show={show} onHide={() => setShow(false)} backdrop="static" keyboard={false}>
+    <Modal show={show} onHide={() => setShow(false)} backdrop="static" keyboard={false} style={modalStyles}>
       <Modal.Header closeButton>
         
       </Modal.Header>
@@ -142,7 +148,7 @@ return (
       )}
       </Modal.Body>
     </Modal>
-    <button onClick={handleCreate}>Create New Customer</button>
+   
   </div>
 );
 }

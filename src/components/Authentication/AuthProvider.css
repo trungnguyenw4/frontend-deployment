@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+
+.auth-container {
+    position: fixed;
+    display: fixed;
+    flex-direction: row;
+  
+    justify-content: center;
+    height: 100vh; 
+    padding-left: 450px;
+    padding-bottom: 1000px;
+  }
+
+.instructionEmail {
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    color: #8e0101;
+    padding: 0.25rem;
+    position: fixed;
+    bottom: 574px;
+    padding-left: 150px;
+}
+
+.instructionPassword {
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    color: #8e0101;
+    padding: 0.25rem;
+    position: fixed;
+    bottom: 445px;
+    padding-left:  10px;
+}
+
+.instructionConfirmPassword {
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    color: #8e0101;
+    padding: 0.25rem;
+    position: fixed;
+
+    padding-left: 150px;
+}
+
+.instructions > svg {
+    margin-right: 0.25rem;
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+.hide {
+    display: none;
+}
+
+.valid {
+    color: limegreen;
+    margin-left: 0.25rem;
+}
+
+.invalid {
+    color: red;
+    margin-left: 0.25rem;
+}
+
+.errmsg {
+    background-color: lightpink;
+    color: firebrick;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.line {
+    display: inline-block;
+}

@@ -1,84 +1,40 @@
 import React from 'react';
-//import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import Login from './components/Login';
-import Logout from './components/Logout';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
-//import SingleProp from './components/SingleProp';
-import NewsBoard from './components/NewsBoard';
 
-import Navbar from "./Navbar"
+import Login from './components/Authentication/Login';
+import Logout from './components/Authentication/Logout';
 
-//import Navbar from "./components/Navbar/NavBar2"
 
-import Pricing from "./components/Pricing"
+import NewsBoard from './components/NewsBoard/NewsBoard';
+import Navbar from "./components/NavBar/Navbar"
 import InsuranceBrokers from "./components/InsuranceBrokerMap/InsuranceBrokers"
-import About from "./components/About"
-import Registration from './components/Registration';
-
-import AuthProvider from "./components/authProvider2";
+import Registration from './components/Authentication/Registration';
+import AuthProvider from "./components/Authentication/authProvider";
 import Customers from './components/Customers/Customers';
 
-// import Unauthorized from './components/Unauthorized';
-// //import Lounge from './components/Lounge';
-// //import LinkPage from './components/LinkPage';
-// import RequireAuth from './components/RequireAuth';
-
-
-//import AuthProvider from "./provider/authProvider";
-//import { Switch } from "react-router-dom"
-//import Routes from "./components/routeHook";
-
-// function App() {
-//   return (
-//     <AuthProvider>
-//      <Route path="login" element={<Login />} />
-//     </AuthProvider>
-//   );
-// }
-
-// export default App;
-
-//import { API_BASE_URL } from '../apiConfig';
-
-
-
-
-// function App() {
-//   return (
-//     <Router>
-//       <Navbar />
-//       <Routes>
-        
-//         <Route path='/' component={<NewsBoard/>} />
-//         <Route path='/pricing' component={<Pricing />} />
-//         <Route path='/registration' component={<Registration />} />
-//         <Route path='/login' component={<AuthProvider>
-//                                                <Login />
-//                                              </AuthProvider>} />
-//         <Route path='/Customers' component={<AuthProvider>
-//                                                <Customers />
-//                                              </AuthProvider>} />
-//         <Route path='/about' component={<About />} />
-//       </Routes>
-//     </Router>
-//   );
-// }
-
-//the one below works:
 
 
 
 function App() {
   return (
     <>
+
     <Navbar/>
     
+
       <div className="container">
+
+
         <Routes>
-          <Route path="/home" element={<NewsBoard/>} />
-          <Route path="/pricing" element={<Pricing />} />
+        
+        <Route
+        path="*"
+        element={<Navigate to="/home" replace />}
+        />
+
+          <Route  path="/home" element={<NewsBoard/>} />
+        
           <Route path="/registration" element={<Registration />} />
           <Route path="/login" element={    <AuthProvider>
                                               <Login />
@@ -103,7 +59,7 @@ function App() {
                                               <Customers />
                                             </AuthProvider>} />
 
-          <Route path="/about" element={<About />} />
+         
         </Routes>
       </div>
     </>
@@ -119,8 +75,8 @@ export default App
 
 
 
-// import React from "react";
-// import { Navigate  } from "react-router-dom";
+
+
 
 // import CustomRoute from "./components/CustomRoute";
 // import MainIndex from "./components/MainIndex";

@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { GoogleMap, useLoadScript, Marker, InfoWindow } from "@react-google-maps/api";
 import './firmCard.css';
-
+import './mapStyling.css';
+import { MAP_KEY } from "../../apiConfig";
 const libraries = ["places"];
+
 const mapContainerStyle = {
-  height: "400px",
+  height: 500,
   width: "100%"
+
 };
 
+// University of Westminster 
 const defaultCenter = {
-  lat: 51.5194, // University of Westminster latitude
-  lng: -0.1418, // University of Westminster longitude
+  lat: 51.5194, 
+  lng: -0.1418, 
 };
 
 const getMarkerIcon = (rating) => ({
@@ -46,14 +50,14 @@ const CompassControl = ({ panTo, handleSearch }) => {
 
 const InsuranceBrokers = () => {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: 'AIzaSyD3VRRx9jjP6qfGLDK_KYf_EU8OpduSobI',
+    googleMapsApiKey: MAP_KEY,
     libraries
   });
 
   const [map, setMap] = useState(null);
   const [searchResults, setSearchResults] = useState([]);
   const [selectedResult, setSelectedResult] = useState(null);
-  const [mapZoom, setMapZoom] = useState(20);
+  const [mapZoom, setMapZoom] = useState(15);
 
   useEffect(() => {
     const savedSearchResults = localStorage.getItem('searchResults');
@@ -97,7 +101,7 @@ const InsuranceBrokers = () => {
           service.textSearch({
             query: "Insurance Brokers",
             location: location,
-            radius: 20
+            radius: 100
           }, (results, status) => {
             if (status === window.google.maps.places.PlacesServiceStatus.OK) {
               const mappedResults = results.map(result => ({
@@ -132,7 +136,7 @@ const InsuranceBrokers = () => {
   if (!isLoaded) return "Loading maps...";
 
   return (
-    <div>
+    <div className="map-container">
       <input type="text" id="search-input" className="search-input" placeholder="Enter your location" onKeyDown={handleKeyDown} />
       <button onClick={() => handleSearch(document.getElementById("search-input").value)} className="search-button">Search</button>
       
