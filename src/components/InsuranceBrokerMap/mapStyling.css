@@ -1,0 +1,27 @@
+.map-container {
+    width: 120%; 
+    height: 1000px; 
+    margin-top: 20px; 
+    align-self: center;
+    padding-left: 360px;
+  }
+  
+  .search-input {
+    width: 200px; 
+    padding: 8px;
+    margin-right: 10px; 
+  }
+  
+  .search-button {
+    padding: 8px 16px; 
+    background-color: #663399; 
+    color: white;
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+  }
+  
+  .search-button:hover {
+    background-color: #d91ed9; 
+  }
+  

@@ -4,7 +4,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px;
   margin-bottom: 20px;
-  max-width: 200px; /* Adjust the maximum width */
+  max-width: 200px; 
 }
 
 .card-title {
@@ -21,21 +21,21 @@
 }
 
 .card img {
-  max-width: 30%; /* Ensure the image fits within the card */
+  max-width: 30%; 
 }
 
 .search-input {
-  width: 500px; /* Adjust the width as needed */
-  height: 40px; /* Adjust the height as needed */
-  font-size: 16px; /* Adjust the font size as needed */
-  padding: 8px; /* Adjust the padding as needed */
+  width: 500px; 
+  height: 40px; 
+  font-size: 16px; 
+  padding: 8px; 
 }
 
 .search-button {
   width: 100px;
-  height: 40px; /* Adjust the height as needed */
-  font-size: 16px; /* Adjust the font size as needed */
-  padding: 8px 16px; /* Adjust the padding as needed */
+  height: 40px;
+  font-size: 16px; 
+  padding: 8px 16px; 
 }
 
 .compass-control {
@@ -46,8 +46,8 @@
   border: 1px solid #ccc;
   border-radius: 2px;
   cursor: pointer;
-  padding: 3px; /* Adjust the padding to change the size */
-  font-size: 12px; /* Adjust the font size */
+  padding: 3px;
+  font-size: 12px;
   z-index: 1;
   max-width: 10%; 
   height: 50px;
@@ -56,6 +56,6 @@
 
 
 img {
-  width: 100px; /* Set the desired width */
-  height: 50px; /* Set the desired height */
+  width: 100px; 
+  height: 50px; 
 }

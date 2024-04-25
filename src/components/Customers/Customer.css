@@ -1,0 +1,22 @@
+.container {
+    text-align: center; 
+   
+  }
+  
+  table {
+    width: 200%; 
+    border-collapse: collapse;
+    padding-left: 700%;
+  }
+  
+  th, td {
+    padding: 12px; 
+    border: 1px solid #070707;
+  }
+  
+  th {
+    background-color: #f2f2f2; 
+  }
+  
+
+  
