@@ -10,9 +10,9 @@ const Logout = () => {
 
     localStorage.removeItem("token");
     localStorage.clear();
-    sessionStorage.removeItem('token');
-    sessionStorage.removeItem('user');
-    sessionStorage.clear();
+    //sessionStorage.removeItem('token');
+    //sessionStorage.removeItem('user');
+    localStorage.clear();
     var cookies = document.cookie.split(";");
 
     for (var i = 0; i < cookies.length; ++i) {
