@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+## About this project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+For this project, I created a web app where visitors can read newspapers about Healty&Fitness topic. Once they decided to login/register, they can explore nearby insurance firms/borkers near by through a embedded and customised Google Map. Besides, after login the Admin can monitor customer through a private section, where he can add, edit, and remove customer. 
 
-## Available Scripts
+In order to archive those functionality, I need to have the following main with sub components:
 
-In the project directory, you can run:
++] Customer: Form, Table, List, Details
++] Authentication: Login, Logout, Registration and a helper to handle generated tokens
++] Map
++] NewsBoard : News Item
++] Navigation Bar
 
-### `npm start`
+Besides, I also needed .css files for styling.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+During my project, I applied user validation on Registration phase where users have to enter a correct email format, a correct password format, and then confirm the password before they can complete their registration. Also, when they login, they can not leave the fields email and password blank.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+A widget for date time is used on Customer page when Admin creates or edits customer details.
 
 ### Deployment
+After I have fully built those functions, I created a CORS policy that allows my backend service to communicate with my frontend one.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Next step, I need to let this frontend service know about my previously deployed backend service on Azure ['https://fontendservice.azurewebsites.net/' ]. After the final pull request of this version successfully merged to the main Branch on GitHub, I can start delpoying this project to AWS.
 
-### `npm run build` fails to minify
+Link to my deployed app: [https://main.d31rt24o4jlzps.amplifyapp.com/home]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##Required dependencies:
+
+react
+react-router-dom
+axios
+@react-google-maps/api
+@fortawesome/react-fontawesome
+@fortawesome/free-solid-svg-icons
+bootstrap
+react-bootstrap
