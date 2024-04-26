@@ -54,7 +54,7 @@ const Login = () => {
            
 
             //setAuth({ Email, Password, accessToken });
-            sessionStorage.setItem('token', JSON.stringify(token))
+            localStorage.setItem('token', JSON.stringify(token))
             
             setToken('');
             setEmail('');

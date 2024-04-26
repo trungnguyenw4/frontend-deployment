@@ -10,7 +10,7 @@ import  Modal  from 'react-bootstrap/Modal';
 
 
 
-const tokenString = sessionStorage.getItem('token')
+const tokenString = localStorage.getItem('token')
 const userToken = JSON.parse(tokenString)
 
 const headers = { Authorization: `Bearer ${userToken}`};
